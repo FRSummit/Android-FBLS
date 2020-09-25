@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".C2_EyesAndFemaleBodyLanguage"
+    android:background="@drawable/background_3">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/eye_and_body_lang_activity_logo_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:id="@+id/eye_and_body_lang_activity_welcome_img"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/eyes_and_female_body_language"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/eye_and_body_lang_activity_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/eye_and_body_lang_activity_logo_section">
+
+                <TextView
+                    android:id="@+id/eye_and_body_lang_activity_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Eyes And Female Body Language"
+                    android:textSize="20dp"
+                    android:textColor="#222"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/eye_and_body_lang_activity_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Distance"
+                    android:textSize="16dp"
+                    android:textColor="#222"
+                    android:textStyle="normal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left"
+                    android:layout_below="@id/eye_and_body_lang_activity_title"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_background"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:drawableStart="@drawable/home_icon"
+                    android:text="Back To Index"
+                    android:textStyle="normal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14dp"
+                    android:textAllCaps="false"
+                    android:onClick="goToHomeBtnClick"
+                    android:layout_alignParentStart="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

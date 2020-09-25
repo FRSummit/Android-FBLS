@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity"
+    android:background="@drawable/background_3">
+
+    <RelativeLayout
+        android:id="@+id/menu_activity_logo_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/menu_activity_welcome_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/welcome_women_logo"/>
+
+        <TextView
+            android:id="@+id/menu_activity_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female Body Language Secrets"
+            android:textSize="20dp"
+            android:textColor="#0592CD"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/menu_activity_welcome_img"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menu_activity_menu_btn_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@id/menu_activity_logo_section">
+
+        <Button
+            android:id="@+id/menu_activity_btn_index"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Go To Index"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="#47DFEA"
+            android:onClick="indexBtnClick"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"/>
+
+        <Button
+            android:id="@+id/menu_activity_btn_about"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="About This App"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="#47DFEA"
+            android:onClick="aboutBtnClick"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"
+            android:layout_below="@+id/menu_activity_btn_index"/>
+
+        <Button
+            android:id="@+id/menu_activity_btn_rating"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="App Rating"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="#47DFEA"
+            android:onClick="ratingBtnClick"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"
+            android:layout_below="@+id/menu_activity_btn_about"/>
+
+        <Button
+            android:id="@+id/menu_activity_btn_privacy"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Privacy Policy"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="#47DFEA"
+            android:onClick="privacyBtnClick"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"
+            android:layout_below="@+id/menu_activity_btn_rating"/>
+
+        <Button
+            android:id="@+id/menu_activity_btn_more_app"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="More App"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="#47DFEA"
+            android:onClick="moreAppBtnClick"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"
+            android:layout_below="@+id/menu_activity_btn_privacy"/>
+
+        <Button
+            android:id="@+id/menu_activity_btn_exit"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="Exit"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="#47DFEA"
+            android:onClick="exitBtnClick"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background"
+            android:layout_below="@+id/menu_activity_btn_more_app"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

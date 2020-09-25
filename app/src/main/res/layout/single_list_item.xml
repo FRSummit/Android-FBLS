@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:padding="8dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/btn_background">
+
+    <ImageView
+        android:id="@+id/single_list_item_image"
+        android:src="@drawable/welcome_women_logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/single_list_item_title"
+        android:text="Android Name"
+        android:textSize="14dp"
+        android:textColor="#222"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/single_list_item_image"
+        android:layout_toEndOf="@+id/single_list_item_image"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/single_list_item_subtitle"
+        android:text="Android Version"
+        android:textSize="12dp"
+        android:textColor="#222"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/single_list_item_title"
+        android:layout_alignLeft="@+id/single_list_item_title"
+        android:layout_alignStart="@+id/single_list_item_title" />
+
+</RelativeLayout>

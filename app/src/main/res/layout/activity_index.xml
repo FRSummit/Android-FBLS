@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndexActivity"
+    android:background="@drawable/background_3">
+
+    <RelativeLayout
+        android:id="@+id/index_activity_logo_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/index_activity_welcome_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/welcome_women_logo"/>
+
+        <TextView
+            android:id="@+id/index_activity_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female Body Language Secrets"
+            android:textSize="20dp"
+            android:textColor="#0592CD"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/index_activity_welcome_img"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/index_activity_list_view_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/index_activity_logo_section">
+
+        <RelativeLayout
+            android:id="@+id/index_activity_back_chapter_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="10dp">
+
+            <Button
+                android:id="@+id/index_activity_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_background"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:drawableStart="@drawable/home_icon"
+                android:text="Back To Home"
+                android:textStyle="normal"
+                android:textColor="#FFFFFF"
+                android:textSize="14dp"
+                android:textAllCaps="false"
+                android:onClick="goToHomeBtnClick"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/index_activity_chapter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chapters"
+                android:textSize="20dp"
+                android:textColor="#222"
+                android:textStyle="bold"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/index_activity_back_btn"/>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/index_activity_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="2dp"
+            android:layout_marginTop="10dp"
+            android:padding="4dp"
+            android:layout_below="@+id/index_activity_back_chapter_section"/>
+
+    </RelativeLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/privacy_activity_description"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:layout_marginTop="20dp">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/privacy_activity_back_btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:background="@drawable/btn_background"-->
+<!--            android:paddingLeft="6dp"-->
+<!--            android:paddingRight="6dp"-->
+<!--            android:drawableStart="@drawable/home_icon"-->
+<!--            android:text="Back To Home"-->
+<!--            android:textStyle="normal"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="14dp"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:onClick="goToHomeBtnClick"-->
+<!--            android:layout_alignParentStart="true"/>-->
+
+<!--    </RelativeLayout>-->
+
+</RelativeLayout>

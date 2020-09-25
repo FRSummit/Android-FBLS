@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.frskynet.femalebodylanguagesecrets">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Conclusion"></activity>
+        <activity android:name=".C9_Signals" />
+        <activity android:name=".C8_DanceFloor" />
+        <activity android:name=".C7_MirroringBodyLanguage" />
+        <activity android:name=".C6_LegsAndFeet" />
+        <activity android:name=".C5_Smile" />
+        <activity android:name=".C4_Touching" />
+        <activity android:name=".C3_HandTalk" />
+        <activity android:name=".C2_EyesAndFemaleBodyLanguage" />
+        <activity android:name=".C1_DistanceActivity" />
+        <activity android:name=".IndexActivity" />
+        <activity android:name=".PrivacyActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
