@@ -25,6 +25,9 @@
         <activity android:name=".PrivacyActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".MenuActivity" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4861848901455235~6532008399" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
