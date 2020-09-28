@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:text="Smile"
                     android:textSize="20dp"
-                    android:textColor="#222"
+                    android:textColor="@color/chapter_title_text_color"
                     android:textStyle="bold"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:text="Smile"
                     android:textSize="16dp"
-                    android:textColor="#222"
+                    android:textColor="@color/chapter_desc_text_color"
                     android:textStyle="normal"
                     android:layout_marginTop="10dp"
                     android:gravity="left"
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="60dp"
                 android:layout_marginTop="20dp">
 
                 <Button
@@ -82,7 +82,7 @@
                     android:drawableStart="@drawable/home_icon"
                     android:text="Back To Index"
                     android:textStyle="normal"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/back_btn_text_color"
                     android:textSize="14dp"
                     android:textAllCaps="false"
                     android:onClick="goToHomeBtnClick"
@@ -92,5 +92,16 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/distance_activity_title_banner_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="@string/ad_size"
+        ads:adUnitId="@string/banner_unit_id_c5">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

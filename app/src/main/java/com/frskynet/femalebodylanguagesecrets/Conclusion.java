@@ -15,14 +15,17 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class Conclusion extends Activity {
 
     private TextView desc;
     private ProgressDialog loading;
-
-    private DataLoader dataLoader;
     private JSONParser jsonParser;
+    private AdView adView;
+    private BannerAdEvents bannerAdEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +33,18 @@ public class Conclusion extends Activity {
         setContentView(R.layout.activity_conclusion);
 
         desc = findViewById(R.id.conclution_activity_desc);
-        dataLoader = new DataLoader();
         jsonParser = new JSONParser();
 
         loadFromSheet();
+
+        adView = findViewById(R.id.distance_activity_title_banner_ad);
+        MobileAds.initialize(this, this.getString(R.string.banner_app_id)); //App Id from string values
+        AdRequest adRequest = new AdRequest.Builder()
+                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
+        bannerAdEvents = new BannerAdEvents();
+        bannerAdEvents.loadAd(this.getApplicationContext(), adView);
     }
 
     public void goToHomeBtnClick(View view) {
@@ -44,7 +55,7 @@ public class Conclusion extends Activity {
 
     public void loadFromSheet() {
         loading = ProgressDialog.show(this, "Loading", "please wait ...", false, true);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbw667fmau8KmUufVwdQOYbVrRdURuz1vLNhPssP_P14wl0DIC4t/exec" + "?action=getConclusion",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, this.getString(R.string.app_script_url) + "?action=getConclusion",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -64,5 +75,29 @@ public class Conclusion extends Activity {
         stringRequest.setRetryPolicy(policy);
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(stringRequest);
+    }
+
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
     }
 }

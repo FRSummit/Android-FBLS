@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">FEMALE BODY LANGUAGE SECRETS</string>
+    <string name="app_script_url">https://script.google.com/macros/s/AKfycbw667fmau8KmUufVwdQOYbVrRdURuz1vLNhPssP_P14wl0DIC4t/exec</string>
+    <!--Ads-->
+    <string name="ad_size">FULL_BANNER</string>
+    <string name="banner_app_id">ca-app-pub-4861848901455235~6532008399</string>
+
+    <string name="BANNER_TEST_UNIT_ID">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="banner_unit_id_menu">ca-app-pub-4861848901455235/8006077449</string>
+    <string name="banner_unit_id_about">ca-app-pub-4861848901455235/8936015733</string>
+    <string name="banner_unit_id_c1">ca-app-pub-4861848901455235/6309852394</string>
+    <string name="banner_unit_id_c2">ca-app-pub-4861848901455235/3683689051</string>
+    <string name="banner_unit_id_c3">ca-app-pub-4861848901455235/3492117366</string>
+    <string name="banner_unit_id_c4">ca-app-pub-4861848901455235/8552872356</string>
+    <string name="banner_unit_id_c5">ca-app-pub-4861848901455235/3300545674</string>
+    <string name="banner_unit_id_c6">ca-app-pub-4861848901455235/9674382335</string>
+    <string name="banner_unit_id_c7">ca-app-pub-4861848901455235/5735137327</string>
+    <string name="banner_unit_id_c8">ca-app-pub-4861848901455235/3108973985</string>
+    <string name="banner_unit_id_c9">ca-app-pub-4861848901455235/9482810646</string>
+    <string name="banner_unit_id_conclusion">ca-app-pub-4861848901455235/6856647302</string>
 </resources>

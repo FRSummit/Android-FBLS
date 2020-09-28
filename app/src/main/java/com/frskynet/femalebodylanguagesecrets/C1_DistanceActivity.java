@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -17,19 +15,17 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class C1_DistanceActivity extends Activity {
 
     private TextView distanceDesc;
     private ProgressDialog loading;
     private JSONParser jsonParser;
-    private InterstitialAd mInterstitialAd;
+    private AdView adView;
+    private BannerAdEvents bannerAdEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +37,14 @@ public class C1_DistanceActivity extends Activity {
 
         loadFromSheet();
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/8691691433"); // Interstitial
-        AdRequest request = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+        adView = findViewById(R.id.distance_activity_title_banner_ad);
+        MobileAds.initialize(this, this.getString(R.string.banner_app_id)); //App Id from string values
+        AdRequest adRequest = new AdRequest.Builder()
+                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
-        mInterstitialAd.loadAd(request);
-        adEvent();
+        adView.loadAd(adRequest);
+        bannerAdEvents = new BannerAdEvents();
+        bannerAdEvents.loadAd(this.getApplicationContext(), adView);
     }
 
     public void goToHomeBtnClick(View view) {
@@ -58,13 +55,12 @@ public class C1_DistanceActivity extends Activity {
 
     public void loadFromSheet() {
         loading = ProgressDialog.show(this, "Loading", "please wait ...", false, true);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbw667fmau8KmUufVwdQOYbVrRdURuz1vLNhPssP_P14wl0DIC4t/exec" + "?action=getDistance",
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, this.getString(R.string.app_script_url) + "?action=getDistance",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         distanceDesc.setText(jsonParser.parseItems(response, "Distance"));
                         loading.dismiss();
-                        loadAc();
                     }
                 },
                 new Response.ErrorListener() {
@@ -81,58 +77,27 @@ public class C1_DistanceActivity extends Activity {
         queue.add(stringRequest);
     }
 
-    private void loadAc() {
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                interBtnClick();
-            }
-        };
-        Timer timer = new Timer();
-        timer.schedule(task, 30000);
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
     }
 
-    public void interBtnClick() {
-        if(mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-            Toast.makeText(this, "The interstitial wasn't loaded yet.", Toast.LENGTH_LONG).show();
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
         }
     }
 
-    public void adEvent() {
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                Toast.makeText(getApplicationContext(), "Ad is loaded", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                Toast.makeText(getApplicationContext(), "Ad failed to load", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onAdOpened() {
-                Toast.makeText(getApplicationContext(), "Ad is opened", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onAdClicked() {
-                Toast.makeText(getApplicationContext(), "Ad is clicked", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                Toast.makeText(getApplicationContext(), "Ad left application", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onAdClosed() {
-                Toast.makeText(getApplicationContext(), "Ad is closed", Toast.LENGTH_LONG).show();
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            }
-        });
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
     }
 }

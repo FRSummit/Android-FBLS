@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:text="About This App"
                     android:textSize="18dp"
-                    android:textColor="#006893"
+                    android:textColor="@color/about_title_text"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:text="Female Body Language Secrets"
                     android:textSize="16dp"
-                    android:textColor="#006893"
+                    android:textColor="@color/chapter_desc_text_color"
                     android:textStyle="normal"
                     android:layout_marginTop="10dp"
                     android:gravity="left"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/about_activity_description"
                 android:paddingLeft="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="60dp"
                 android:layout_marginTop="20dp">
 
                 <Button
@@ -97,7 +97,7 @@
                     android:drawableStart="@drawable/home_icon"
                     android:text="Back To Home"
                     android:textStyle="normal"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/back_btn_text_color"
                     android:textSize="14dp"
                     android:textAllCaps="false"
                     android:onClick="goToHomeBtnClick"
@@ -107,5 +107,16 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/distance_activity_title_banner_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="@string/ad_size"
+        ads:adUnitId="@string/banner_unit_id_about">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

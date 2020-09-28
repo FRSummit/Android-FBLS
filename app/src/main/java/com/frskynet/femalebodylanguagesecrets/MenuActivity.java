@@ -10,12 +10,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class MenuActivity extends Activity {
+    private AdView adView;
+    private BannerAdEvents bannerAdEvents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        adView = findViewById(R.id.distance_activity_title_banner_ad);
+        MobileAds.initialize(this, this.getString(R.string.banner_app_id)); //App Id from string values
+        AdRequest adRequest = new AdRequest.Builder()
+                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
+        bannerAdEvents = new BannerAdEvents();
+        bannerAdEvents.loadAd(this.getApplicationContext(), adView);
     }
 
     public void indexBtnClick(View view) {
@@ -53,9 +68,27 @@ public class MenuActivity extends Activity {
         System.exit(0);
     }
 
-//    @Override
-//    public void finish() {
-//        super.finish();
-//        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-//    }
+    @Override
+    public void onPause() {
+        if (adView != null) {
+            adView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (adView != null) {
+            adView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+        super.onDestroy();
+    }
 }

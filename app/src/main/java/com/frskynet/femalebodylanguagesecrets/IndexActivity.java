@@ -66,70 +66,70 @@ public class IndexActivity extends Activity {
 //                Toast.makeText(IndexActivity.this, i + " " + title[i] + "\n" + subtitle[i], Toast.LENGTH_SHORT).show();
                 switch (i) {
                     case 0: {
-                        Toast.makeText(IndexActivity.this, "Distance", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Distance", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C1_DistanceActivity.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 1: {
-                        Toast.makeText(IndexActivity.this, "The Eyes And Female Body Language", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "The Eyes And Female Body Language", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C2_EyesAndFemaleBodyLanguage.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 2: {
-                        Toast.makeText(IndexActivity.this, "Hand Talk", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Hand Talk", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C3_HandTalk.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 3: {
-                        Toast.makeText(IndexActivity.this, "Touching", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Touching", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C4_Touching.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 4: {
-                        Toast.makeText(IndexActivity.this, "What Kind of Smile?", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "What Kind of Smile?", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C5_Smile.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 5: {
-                        Toast.makeText(IndexActivity.this, "Legs And Feet", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Legs And Feet", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C6_LegsAndFeet.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 6: {
-                        Toast.makeText(IndexActivity.this, "Mirroring Body Language", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Mirroring Body Language", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C7_MirroringBodyLanguage.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 7: {
-                        Toast.makeText(IndexActivity.this, "Body Language On The Dance Floor", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Body Language On The Dance Floor", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C8_DanceFloor.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 8: {
-                        Toast.makeText(IndexActivity.this, "What Signals Are You Sending?", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "What Signals Are You Sending?", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, C9_Signals.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         break;
                     }
                     case 9: {
-                        Toast.makeText(IndexActivity.this, "Conclusion", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(IndexActivity.this, "Conclusion", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(IndexActivity.this, Conclusion.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
